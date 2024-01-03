@@ -1,0 +1,16 @@
+{
+  "name": "twgl-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel serve index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.10.3",
+    "twgl.js": "5.5.3",
+    "typescript": "^5.3.3"
+  }
+}
