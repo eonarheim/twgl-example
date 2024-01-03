@@ -4,7 +4,10 @@ const canvas = document.createElement('canvas');
 canvas.width = 800;
 canvas.height = 800;
 document.body.appendChild(canvas);
-const gl = canvas.getContext('webgl2')!;
+const gl = canvas.getContext('webgl2', {
+    alpha: true,
+    premultipliedAlpha: false
+})!;
 
 const vertex = `#version 300 es
 in vec4 position;
@@ -36,7 +39,7 @@ void main() {
   vec3 color = vec3(0.);
   float d = sdfCircle(pixelCoords, 0.25);
   fragColor = vec4(1.0, 0.0, 0.0, 1.0);
-  fragColor.a = smoothstep(0.1, 0.11, d);
+  fragColor.a = 1.0 - smoothstep(0.1, 0.11, d);
 }
 `
 
